@@ -1,0 +1,6 @@
+Input file: test.ss
+   1: (define 
+	LPAREN_T        (
+	DEFINE_T        define
+Error at 1,7: Missing end of file at end of program
+1 errors found in input file

@@ -1,0 +1,7 @@
+Entering Program function; current token is: LPAREN_T
+Using Rule 1
+Entering define function; current token is: LPAREN_T
+Using Rule 2
+Exiting LPAREN_T check; current token is: DEFINE_T
+Exiting define function; current token is: DEFINE_T
+Exiting Program function; current token is: DEFINE_T

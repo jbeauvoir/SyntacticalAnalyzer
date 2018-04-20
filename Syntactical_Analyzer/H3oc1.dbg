@@ -1,0 +1,31 @@
+Input file: H3oc1.ss
+   1: ;; Function: odd_copy
+   2: ;; Input parameter: a list
+   3: ;; Return value: a list containing every other element of the
+   4: ;;               input list. 
+   5: ;; Description: Starting with the first value in the input list,
+   6: ;;              this function will create and return a list
+   7: ;;              containing every other element of the input
+   8: ;;              parameter list. 
+   9: 
+  10: (define (odd_copy ls)
+	LPAREN_T        (
+	DEFINE_T        define
+	LPAREN_T        (
+	IDENT_T         odd_copy
+	IDENT_T         ls
+	RPAREN_T        )
+  11: 	(cond ((not (list? ls)) "odd copy requires a list argument")
+	LPAREN_T        (
+	COND_T          cond
+	LPAREN_T        (
+	LPAREN_T        (
+	NOT_T           not
+	LPAREN_T        (
+	LISTP_T         list?
+	IDENT_T         ls
+	RPAREN_T        )
+	RPAREN_T        )
+	STRLIT_T        "odd copy requires a list argument"
+Error at 11,60: Missing end of file at end of program
+1 errors found in input file
