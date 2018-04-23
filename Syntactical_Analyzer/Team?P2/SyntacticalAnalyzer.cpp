@@ -534,7 +534,7 @@ int SyntacticalAnalyzer::else_part()
 	
 
 	p2file << "Exiting else_part function; current token is: " 
-		<< lex->GetTokenName (token) << endl;
+           << lex->GetTokenName (token) << endl;
 	return errors;
 }
 
@@ -668,8 +668,7 @@ int SyntacticalAnalyzer::more_tokens()
 	  p2file << "Using Rule 14" << endl;
 
 	  token = lex->GetToken();
-	  p2file << "Inside Rule 14; current token is: " 
-		 << lex->GetTokenName (token) << endl;	 
+	 
 
 	  // Non-terminal checks
 	  errors += any_other_token();
@@ -702,8 +701,7 @@ int SyntacticalAnalyzer::param_list()
 
 	  token = lex->GetToken();
 
-	  p2file << "Exiting IDENT_T check in param_list function; current token is: "
-		 << lex->GetTokenName (token) << endl;
+	
 	  
 	  // Non-terminal check 
 	  errors += param_list();
@@ -824,8 +822,7 @@ int SyntacticalAnalyzer::stmt_pair_body()
 	  if( token == RPAREN_T ) {
 	    token = lex->GetToken();
 	    
-	    p2file << "Exiting RPAREN_T check in stmt_pair_body function; current token is: "
-		   << lex->GetTokenName (token) << endl;
+	   
 	    
 	    // return errors++;
 	  }
@@ -847,8 +844,7 @@ int SyntacticalAnalyzer::stmt_pair_body()
 
 	    token = lex->GetToken();
 		  
-	    p2file << "Exiting RPAREN_T check in stmt_pair_body function; current token is: "
-		   << lex->GetTokenName (token) << endl;
+	    
 	    
 	    // Non-terminal check
 	    errors += stmt_pair();
@@ -918,8 +914,7 @@ int SyntacticalAnalyzer::stmt()
 	
 	  token = lex->GetToken();
 		
-	  p2file << "Exiting rule 8 IDENT_T in stmt; current token is: " 
-		 << lex->GetTokenName (token) << endl;
+	  
 	  
 	  errors += literal();
 	}
@@ -929,8 +924,7 @@ int SyntacticalAnalyzer::stmt()
 
 	  token = lex->GetToken();
 		
-	  p2file << "Exiting rule 8 IDENT_T in stmt; current token is: " 
-		 << lex->GetTokenName (token) << endl;
+	 
 
 		
 	}
@@ -946,8 +940,7 @@ int SyntacticalAnalyzer::stmt()
 
 	  if ( token == RPAREN_T ) {
 	    lex->GetTokenName (token);
-	    p2file << "Exiting rule 9 RPAREN_T check in stmt function; current token is: "
-		   << lex->GetTokenName (token) << endl;
+	    
 	  }
 	  else {
 	    //cout << "no RPAREN_T" << endl;
