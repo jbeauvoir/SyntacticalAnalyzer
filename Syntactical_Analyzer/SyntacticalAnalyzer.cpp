@@ -65,8 +65,8 @@ int SyntacticalAnalyzer::Program()
 
 	
 	  if (token != EOF_T) {
-	    errors++;
-	    lex->ReportError ("Missing end of file at end of program");
+	    //  errors++;
+	    //lex->ReportError ("Missing end of file at end of program");
 	  }
 	}
 	// token should be in follows of Program
@@ -552,33 +552,22 @@ int SyntacticalAnalyzer::literal()
 	// RULE 10 
 	if ( token == NUMLIT_T ) {
 	  p2file << "Using Rule 10" << endl;
-
 	  token = lex->GetToken();
-	  
-          p2file << "Exiting NUMLIT_T check in stmt function; current token is: "
-	         << lex->GetTokenName (token) << endl;
 	}
 	// RULE 11
 	else if ( token == STRLIT_T ) {
-		
 	  p2file << "Using Rule 11" << endl;
-
 	  token = lex->GetToken();
-	  
-          p2file << "Exiting STRLIT_T check in stmt function; current token is: "
-	         << lex->GetTokenName (token) << endl;
 	}
 	// RULE 12 
 	else if ( token == QUOTE_T ) {
 	  p2file << "Using Rule 12" << endl;
-	  
 	  token = lex->GetToken();
-	  
 	  errors += quoted_lit();
 	} 
 	// no valid first
 	else {
-	  //cout << "problem in literal firsts" << endl;
+
 	}
 	 
 	p2file << "Exiting literal function; current token is: " 
@@ -607,30 +596,18 @@ int SyntacticalAnalyzer::more_defines()
 	// RULE 3
 	if ( token == LPAREN_T ) {
 	  p2file << "Using Rule 3" << endl;
-
-	  // token = lex->GetToken();
-	  
-    	  // Non-terminal check
+	  // Non-terminal check
 	  errors += define();
-	  errors += more_defines();
-	  
-	  p2file << "Exiting LPAREN_T check; current token is: "
-		 << lex->GetTokenName (token) << endl;
+	  errors += more_defines();	  
 	}
-	// RULE 4
+	// RULE 4 should be an EOF
 	else if ( token == EOF_T ) {
 	  p2file << "Using Rule 4" << endl;
-
-	  //token = lex->GetToken();
-		
-	  //p2file << "Exiting EOF_T check; current token is: "
-	  //     << lex->GetTokenName (token) << endl;
-
 	  return errors;
 	}
-	// SOL
+	// Error
 	else { 
-	  //cout << "no EOF_T or LPAREN" << endl;
+	  
 	}
 	
 	// Should be EOF_T
@@ -907,47 +884,33 @@ int SyntacticalAnalyzer::stmt()
 	p2file << "Entering stmt function; current token is: " 
 		<< lex->GetTokenName (token) << endl;
 
-
 	// RULE 7
 	if ( token == NUMLIT_T || token == QUOTE_T || token == STRLIT_T ) {
-	  p2file << "Using Rule 7" << endl;
-	
-	  token = lex->GetToken();
-		
-	  
-	  
+	  p2file << "Using Rule 7" << endl;	
+	  // Non-terminal check
 	  errors += literal();
 	}
 	// RULE 8
 	else if ( token == IDENT_T ) {
 	  p2file << "Using Rule 8" << endl;
-
 	  token = lex->GetToken();
-		
-	 
-
-		
 	}
-
 	// RULE 9
 	else if ( token == LPAREN_T ) {
 	  p2file << "Using Rule 9" << endl;
-	
-	  token = lex->GetToken();
-		
+	  token = lex->GetToken();		
           // Non-terminal check
 	  errors += action();
 
 	  if ( token == RPAREN_T ) {
 	    lex->GetTokenName (token);
-	    
 	  }
 	  else {
-	    //cout << "no RPAREN_T" << endl;
+	    // error 
 	  }
 	}
 	else {
-	  //cout << "no firsts" << endl;
+	  // there are errors 
 	}
 
 	p2file << "Exiting stmt function; current token is: " 

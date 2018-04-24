@@ -10,5 +10,4 @@ Input file: H3oc1.ss
    9: 
   10: (define (odd_copy ls)
   11: 	(cond ((not (list? ls)) "odd copy requires a list argument")
-Error at 11,60: Missing end of file at end of program
-1 errors found in input file
+0 errors found in input file

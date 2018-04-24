@@ -27,5 +27,4 @@ Input file: H3oc1.ss
 	RPAREN_T        )
 	RPAREN_T        )
 	STRLIT_T        "odd copy requires a list argument"
-Error at 11,60: Missing end of file at end of program
-1 errors found in input file
+0 errors found in input file
