@@ -2,7 +2,8 @@ READ_ME
 
 Whenever you make changes to ANY file checkout the read-me branch and update the readme
 ,otherwise I have to review all your code to see what changes you made. Always document
-with comments for things you believe the other person might not understand. 
+with comments for things you believe the other person might not understand. Remember to 
+leave out any comments that output to the commandline. 
 
 
 
@@ -23,6 +24,11 @@ The merge order
 4. read-me
 
 
+Tasks: 
+- Which branch was the EOF issue corrected in?
+- delete the "lexeme is " in the debugger output 
+- modify the <non-terminal> name from lowercase to capitol 
+      ex - define -> Define
 
 Completed Tasks: 
 - makefile was modified to compile using our group letter P
