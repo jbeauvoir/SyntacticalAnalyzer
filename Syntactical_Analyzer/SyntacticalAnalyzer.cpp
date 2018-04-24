@@ -80,16 +80,17 @@ int SyntacticalAnalyzer::Program()
 	  p2file << "Using Rule 1" << endl;
 	  errors += define();
 	  errors += more_defines();
-	  if (token != EOF_T) {
-	    errors++;
-	    lex->ReportError ("Missing end of file at end of program");
-	  }
+	  
 	}
 	else
 	{
 		lex->ReportError("Source code did not start with left parentheses. Found: " + lex->GetTokenName(token));
 	}
 	// token should be in follows of Program
+	if (token != EOF_T) {
+	    errors++;
+	    lex->ReportError ("Missing end of file at end of program");
+	  }
 	p2file << "Exiting Program function; current token is: "
 					<< lex->GetTokenName (token) << endl;
 	return errors;
