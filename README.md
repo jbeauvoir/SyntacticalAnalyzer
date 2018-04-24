@@ -26,9 +26,12 @@ The merge order
 
 Tasks: 
 - Which branch was the EOF issue corrected in?
+      -> is the eof error not there because I commented out output there 
 - delete the "lexeme is " in the debugger output 
 - modify the <non-terminal> name from lowercase to capitol 
       ex - define -> Define
+      
+      
 
 Completed Tasks: 
 - makefile was modified to compile using our group letter P
