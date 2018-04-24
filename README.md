@@ -14,6 +14,13 @@ Git Notes:
 - make clean before commiting any changes. failure to make clean will
   result in extra "~" files in the repsository
 
+Merging:
+
+The merge order 
+1. logic-corrections
+2. error-checking
+3. re-organize
+4. read-me
 
 
 
